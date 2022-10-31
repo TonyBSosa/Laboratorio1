@@ -9,9 +9,17 @@ class Server {
     } 
     routes(){
      
-        this.app.get('/precios', (req, res) => res.send('Endpoint para precios'))
-     
-    }
+   
+
+        this.app.use('/precios',require ('../routes/precios'))
+        this.app.use('/detalleenvios',require ('../routes/detallesEnvios'))
+        this.app.use('/envios',require ('../routes/envios'))
+        this.app.use('/paquete',require ('../routes/paquetes'))
+        this.app.use('/seguimiento',require ('../routes/seguimiento'))
+      
+
+  
+     }
        
 
        
